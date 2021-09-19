@@ -683,6 +683,8 @@ input, select, textarea {
 			display: block;
 			margin: 0 0 2rem 0;
 			width: 100%;
+			text-align: center;
+			justify-content: center;
 		}
 
 			.image.fit img {
@@ -1000,6 +1002,7 @@ input, select, textarea {
 			
 		table.staff {
 			border-collapse: separate;
+			table-layout: fixed;
 		}
 			table.staff tbody tr:nth-child(2n + 1) {
 				background-color: rgba(255, 255, 255, 0);
