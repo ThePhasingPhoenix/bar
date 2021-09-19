@@ -1508,7 +1508,32 @@ input, select, textarea {
 		border-bottom: solid 1px #ffffff;
 		padding-bottom: 0.5rem;
 	}
-	
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  float: left;
+  border: none;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #dddddd20;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+			background-color: rgba(255, 255, 255, 0.075);
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+}	
 
 /* Main */
 

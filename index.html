@@ -14,7 +14,7 @@
 		<link rel="manifest" href="/site.webmanifest">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
+	<body class="is-preload" onload="document.getElementById('defaultOpen').click();">>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -26,7 +26,7 @@
 							<div class="inner">
 								<h1>The Phasing Phoenix</h1>
 								<p>The Lounge of Legends and Refugees.<br>
-								ULTROS | LAVENDER BEDS | WARD 24 | PLOT 3<br>
+								LAVENDER BEDS | WARD 24 | PLOT 3<br>
 								OPEN WEEKENDS 8PM-11PM EST</p>
 							</div>
 						</div>
@@ -61,6 +61,13 @@
 								<h2 class="major">Menu</h2>
 								<span class="image main"><img src="images/bar2.png" alt="" /></span>
 								<section>
+									<div>
+									<div class="tab">
+										<button id="defaultOpen" class="tablinks" onclick="openMenu(event, 'Mainstays')">Mainstays</button>
+										<button class="tablinks" onclick="openMenu(event, 'Breakfast')">Breakfast</button>
+									</div>
+									<br>
+									<div id="Mainstays" class="tabcontent">
 									<h4>Drinks</h4>
 									<div class="table-wrapper">
 										<table>
@@ -163,6 +170,73 @@
 											</tbody>
 										</table>
 									</div>
+									</div>
+									<div id="Breakfast" class="tabcontent">
+									<div class="table-wrapper">
+									<h4>Drinks</h4>
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Chamomile Tea</td>
+													<td>A delicately fragranced infusion brewed from tiny yellow chamomile flowers.</td>
+													<td>5,000</td>
+												</tr>
+												<tr>
+													<td>Espresso con Panna</td>
+													<td>The surprising addition of sour cream may catch some off guard, but they will invariably be won over by the subtle harmonies of this rich blend.</td>
+													<td>7,000</td>
+												</tr>
+												<tr>
+													<td>Hot Chocolate</td>
+													<td>A sweet beverage commonly drunk in the Holy See, but rarely seen in Foundation due to inability of most of Ishgard's poorer residents to procure the relatively rare and expensive ingredients.</td>
+													<td>8,000</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<h4>Food</h4>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Scrambled Eggs</td>
+													<td>A breakfast dish consisting of several puk eggs scrambled and fried with white truffles.</td>
+													<td>5,000</td>
+												</tr>
+												<tr>
+													<td>La Noscean Toast</td>
+													<td>A slice of bread soaked in a mixture of buffalo milk and eggs, and then fried in creamy butter. A specialty at the Drowning Wench in the citystate of Limsa Lominsa.</td>
+													<td>5,000</td>
+												</tr>
+												<tr>
+													<td>Popoto Pancakes</td>
+													<td>A pancake dish made of ground Dalamud popotoes, served with puréed mirror apples.</td>
+													<td>6,000</td>
+												</tr>
+												<tr>
+													<td>Almond Cream Croissant</td>
+													<td>A flaky crescent-shaped pastry sliced in two and buttered with a sweet creamy paste made from almonds.</td>
+													<td>8,000</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								
 								</section>
 							</article>
 
@@ -436,6 +510,27 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+			<script>
+			function openMenu(evt, menuName) {
+				var i, tabcontent, tablinks;
+					tabcontent = document.getElementsByClassName("tabcontent");
+					for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+				}
+				tablinks = document.getElementsByClassName("tablinks");
+					for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(" active", "");
+				}
+					document.getElementById(menuName).style.display = "block";
+					evt.currentTarget.className += " active";
+				}
+
+				document.addEventListener("DOMContentLoaded", function(event) { 
+				document.getElementById("Mainstays").focus();
+				});
+				</script>
+
 
 	</body>
 </html>
